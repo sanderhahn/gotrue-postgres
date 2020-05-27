@@ -92,3 +92,5 @@ sudo systemctl start gotrue
 sudo systemctl enable gotrue
 
 sudo apt-get install -y httpie jq
+
+sudo -u postgres psql gotrue postgres -c "CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA pg_catalog;"
