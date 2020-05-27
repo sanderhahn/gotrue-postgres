@@ -19,7 +19,7 @@ Once this is done the [pgloader](https://pgloader.io/) tooling is used to conver
 Some columns use varchars for uuids so we convert these into the native `uuid` type.
 Use the `GOTRUE_SMTP_*` and `MAILER_AUTOCONFIRM` environment variables to enable email.
 
-Note that JWT's can be used and configured in ways that defeats its security features:
+Note that JWT can be used and configured in ways that defeats it's security features:
 - [No Way, JOSE! Javascript Object Signing and Encryption is a Bad Standard That Everyone Should Avoid](https://paragonie.com/blog/2017/03/jwt-json-web-tokens-is-bad-standard-that-everyone-should-avoid)
 
 ## CLI Admin
@@ -201,8 +201,11 @@ http GET http://localhost:8081/admin/users "Authorization: Bearer $ACCESS_TOKEN"
 ## Update `app_metadata`
 
 ```bash
-# update user
-echo '{"app_metadata": {"role": "important"}}' | http PUT http://localhost:8081/admin/users/8fd0be1d-2cf1-45e4-94e6-8670cc761c41 "Authorization: Bearer $ACCESS_TOKEN"
+echo '{
+    "app_metadata": {
+        "role": "important"
+    }
+}' | http PUT http://localhost:8081/admin/users/8fd0be1d-2cf1-45e4-94e6-8670cc761c41 "Authorization: Bearer $ACCESS_TOKEN"
 ```
 
 ```json
