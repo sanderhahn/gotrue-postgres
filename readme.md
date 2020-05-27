@@ -31,7 +31,12 @@ multipass shell gotrue
 # open database
 export DATABASE_URL=postgres://gotrue:weceekae5iequiquiy9E@localhost/gotrue
 psql $DATABASE_URL
+
+# dump database
+pg_dump $DATABASE_URL >gotrue.sql
 ```
+
+- [gotrue.sql](gotrue.sql)
 
 ## User Signup
 
