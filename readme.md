@@ -19,6 +19,9 @@ Once this is done the [pgloader](https://pgloader.io/) tooling is used to conver
 Some columns use varchars for uuids so we convert these into the native `uuid` type.
 Use the `GOTRUE_SMTP_*` and `MAILER_AUTOCONFIRM` environment variables to enable email.
 
+Note that JWT's can be used and configured in ways that defeats its security features:
+- [No Way, JOSE! Javascript Object Signing and Encryption is a Bad Standard That Everyone Should Avoid](https://paragonie.com/blog/2017/03/jwt-json-web-tokens-is-bad-standard-that-everyone-should-avoid)
+
 ## CLI Admin
 
 ```bash
